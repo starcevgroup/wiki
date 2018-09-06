@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} {{flatpage.newflatpage.title_us|safe}}{% endblock %}
+{% block keywords %}{{flatpage.newflatpage.description|safe}}{% endblock %}
+{% block description %}{{flatpage.newflatpage.keywords|safe}}{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+<div class="container page-container">
+	<main>
+		<article>
+			<div class="post-header">
+				<h1 class="post-title">{{stranica.name_block|safe}}</h1>
+			</div>
+			<div class="post-content">
+				<center>
+					{% if stranica.image %}
+					<img src="/media/{{ stranica.image }}" alt="{{ stranica.name_block }}">
+					{% endif %}
+				</center>
+				{{stranica.text_block|safe}} {{ stranica.created_at }}
+				<br> Категория: <a href="/{{ cat.categoryslug }}">{{ stranica.categorypost }}</a>
+
+			</div>
+		</article>
+	</main>
+</div>
+
+{% include "menu-right.html" %}
+
+
+
+{% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,25 @@
+
+{% load staticfiles %}
+
+<div class="page-container-right">
+
+    <ul class="cards clearfix">
+
+
+        {% for cat in cat %}
+        <li class="col-md-5">
+                <div class="panel panel-default">
+                  <div class="panel-heading"><a href="/{{ cat.categoryslug }}" rel="nofollow">{{ cat.name }}</a></div>
+                  <div><a href="/{{ cat.categoryslug }}"><img src="/media/{{ cat.image }}" alt="{{ cat.name }}"></a></div>
+                  <div class="panel-footer">Количество записей: <strong>{{ cat.count_post }}</strong></div>
+                </div>
+              </li>
+
+            {% empty %}
+            <p style="font-size: 16px">Нет постов</p>
+            {% endfor %}
+
+       </ul>
+
+
+  </div>

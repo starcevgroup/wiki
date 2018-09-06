@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load sitetree %} 
+
+{% block title %}Wiki{% endblock %}
+{% block keywords %}Wiki{% endblock %}
+{% block description %}Wiki{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+
+
+<div class="container">
+
+<main>
+
+  <div id="category-filter">
+    <span class="btn btn-success">Веб</span> 
+    <a href="" class="btn btn-default">Программы</a> 
+    <a href="" class="btn btn-default">Дизайн</a> 
+    <a href="" class="btn btn-default">Языки</a>
+  </div>
+  
+  
+  <ul class="cards clearfix">
+
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/dostup/" rel="nofollow">Доступы и пароли</a></div>
+          <div><a href="/dostup/"><img src="{% static "/img/password.jpg"%}" alt="HTML и CSS"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>50</strong></div>
+        </div>
+      </li>    
+
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/sayts/" rel="nofollow">Крутые сайты</a></div>
+          <div><a href="/sayts/"><img src="{% static "/img/katalog.jpg"%}" alt="HTML и CSS"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>50</strong></div>
+        </div>
+      </li> 
+
+       <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/prodvizhenie/" rel="nofollow">Продвижение сайтов</a></div>
+          <div><a href="/prodvizhenie/"><img src="{% static "/img/prodvizhenie.jpg"%}" alt="HTML и CSS"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>50</strong></div>
+        </div>
+      </li> 
+
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/htmlcss/" rel="nofollow">HTML и CSS</a></div>
+          <div><a href="/htmlcss/"><img src="{% static "/img/html-css.jpg"%}" alt="HTML и CSS"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>50</strong></div>
+        </div>
+      </li>
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/django/" rel="nofollow">Django</a></div>
+          <div><a href="/django/"><img src="{% static "/img/django.jpg"%}" alt="Django 1.11"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>18</strong></div>
+        </div>
+      </li>
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/postgresql/" rel="nofollow">PostgreSql</a></div>
+          <div><a href="/postgresql/"><img src="{% static "/img/postgresql.jpg"%}" alt="MySQL"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>9</strong></div>
+        </div>
+      </li>
+       <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/gulp/" rel="nofollow">Gulp</a></div>
+          <div><a href="/gulp/"><img src="{% static "/img/gulp.jpg"%}" alt="Laravel 5"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>9</strong></div>
+        </div>
+      </li>
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/sass/" rel="nofollow">Sass</a></div>
+          <div><a href="/sass/"><img src="{% static "/img/sass.jpg"%}" alt="Canvas"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>14</strong></div>
+        </div>
+      </li>
+     
+        <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/apache-nginx/" rel="nofollow">Apache2 и Nginx</a></div>
+          <div><a href="/apache-nginx/"><img src="{% static "/img/apache.jpg"%}" alt="MySQL"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>9</strong></div>
+        </div>
+      </li>
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/linux/" rel="nofollow">Linux</a></div>
+          <div><a href="/linux/"><img src="{% static "/img/terminal.jpg"%}" alt="Node.JS"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>2</strong></div>
+        </div>
+      </li>
+        <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/photoshop/" rel="nofollow">Photoshop</a></div>
+          <div><a href="/photoshop/"><img src="{% static "/img/photoshop.jpg"%}" alt="Canvas"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>14</strong></div>
+        </div>
+      </li>
+        
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/sublime/" rel="nofollow">Sublime</a></div>
+          <div><a href="/sublime/"><img src="{% static "/img/sublime.jpg"%}" alt="Raphaël"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>2</strong></div>
+        </div>
+      </li>
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/bitrix/" rel="nofollow">Bitrix</a></div>
+          <div><a href="/bitrix/"><img src="{% static "/img/bitrix.jpg"%}" alt="Bitrix"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>58</strong></div>
+        </div>
+      </li>
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/wordpress/" rel="nofollow">WordPress</a></div>
+          <div><a href="/wordpress/"><img src="{% static "/img/wordpress.jpg"%}" alt="WordPress"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>5</strong></div>
+        </div>
+      </li>
+
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/git/" rel="nofollow">Git</a></div>
+          <div><a href="/git/"><img src="{% static "/img/git.jpg"%}" alt="git"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>10</strong></div>
+        </div>
+      </li>
+      
+          <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/java/" rel="nofollow">JavaScript</a></div>
+          <div><a href="/java/"><img src="{% static "/img/javascript.jpg"%}" alt="JavaScript"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>84</strong></div>
+        </div>
+      </li>
+       <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/mysql/" rel="nofollow">Mysql</a></div>
+          <div><a href="/mysql/"><img src="{% static "/img/mysql.jpg"%}" alt="MySQL"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>9</strong></div>
+        </div>
+      </li>
+       <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/opencart/" rel="nofollow">Opencart</a></div>
+          <div><a href="/opencart/"><img src="{% static "/img/opencart.jpg"%}" alt="Node.JS"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>2</strong></div>
+        </div>
+      </li>
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/jquery/" rel="nofollow">jQuery</a></div>
+          <div><a href="/jquery/"><img src="{% static "/img/jquery.jpg"%}" alt="jQuery"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>68</strong></div>
+        </div>
+      </li>
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/php/" rel="nofollow">PHP</a></div>
+          <div><a href="/php/"><img src="{% static "/img/php.jpg"%}" alt="PHP"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>98</strong></div>
+        </div>
+      </li>
+       <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/advego/" rel="nofollow">Advego</a></div>
+          <div><a href="/advego/"><img src="{% static "/img/advego.jpg"%}" alt="Advego"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>98</strong></div>
+        </div>
+      </li>
+      <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/centos/" rel="nofollow">Centos</a></div>
+          <div><a href="/centos/"><img src="{% static "/img/centos.jpg"%}" alt="centos"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>98</strong></div>
+        </div>
+      </li>
+       <li class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="/direkt/" rel="nofollow">Яндекс директ и РСЯ</a></div>
+          <div><a href="/direkt/"><img src="{% static "/img/direkt.jpg"%}" alt="direkt"/></a></div>
+          <div class="panel-footer">Количество записей: <strong>98</strong></div>
+        </div>
+      </li>
+       </ul>
+  
+  
+  
+</main>
+
+
+
+</div>
+
+
+{% include "footer.html" %}
+{% endblock %}

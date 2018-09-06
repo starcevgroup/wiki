@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+    
+
+
+{% block content %}
+    
+<link rel="stylesheet" href="{% static 'css/tag_suggestion.css' %}">
+
+    <div class="row clearfix">
+        <div class="col-md-6 col-md-offset-3 column" style="">
+            <form action="" method="post" id="search-form" autocomplete="off">
+                {% csrf_token %}
+                <div class="input-group input-group-sm">
+                    <div class="tag-suggestion">
+                    {{ searchtag.q.errors }}
+                    {{ searchtag.q }}
+                    </div>
+
+                    <span class="input-group-btn">
+                        <button class="btn btn-search" type="submit">search</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+<div class="row clearfix" style="margin: 0 auto; width: 1200px;" >
+    <div class="col-md-12 column posts">
+        <article>
+            <ul class="column-2">
+                {% for stranica in tags %}
+                <li class="svetofor-a" style="font-size: 16px">
+                    <a href="{{ stranica.get_absolute_url }}">
+                        <div class="blog-post2-opisanie  {% if stranica.svetofor %} {{ stranica.svetofor.class_block }} {% else %} svetofor-auto {% endif %} ">
+                            {% if stranica.image %} <img src="/media/{{ stranica.image }}" style="width: 50px; margin-right: 10px"> {% else %}{% endif %}{{ stranica.name_block }}</div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </article>
+    </div>
+</div>
+
+
+    <script src="{% static 'js/typahead.js' %}"></script>
+    <script src="{% static 'js/search_tag.js' %}"></script>
+
+{% endblock %}
+
+
+
+
+
+

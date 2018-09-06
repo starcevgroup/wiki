@@ -1,0 +1,11 @@
+*.pyc
+*~
+__pycache__
+myvenv
+db.sqlite3
+gulpfile.js
+package.json
+/static
+/media
+/gallery
+.DS_Store

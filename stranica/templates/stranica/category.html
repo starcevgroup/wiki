@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} {{flatpage.newflatpage.title_us|safe}}{% endblock %}
+{% block keywords %}{{flatpage.newflatpage.description|safe}}{% endblock %}
+{% block description %}{{flatpage.newflatpage.keywords|safe}}{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+
+
+<div class="container page-container">
+ <main>
+
+
+
+
+<article>
+
+
+
+    <p class="header header-first" style="font-size: 18px">
+        <img src="{{ category.image.url }}" style="width: 120px;margin-right: 10px">
+        {{ category.name }}
+    </p>
+    <ul class="column-2">
+
+        {% for post in post %}
+
+<li class="svetofor-a" style="font-size: 16px">
+<a href="{{ post.get_absolute_url }}">
+    <div class="blog-post2-opisanie  {% if post.svetofor %} {{ post.svetofor.class_block }} {% else %} svetofor-auto {% endif %} ">
+      {% if post.image %}  <img src="/media/{{ post.image }}" style="width: 50px; margin-right: 10px"> {% else %}{% endif %}{{ post.name_block }}</div></a>
+</li>
+
+           {% empty %}
+           <p>Нет постов</p>
+           {% endfor %}
+
+    </ul>
+
+{% if post.paginator.num_pages > 1 %}
+        <div class="row">
+            <div class="col-lg-12" align="center">
+                <ul class="pagination">
+                    {% if post.has_previous %}
+                        <li class="arrow"><a href="/{{ category.categoryslug }}?page={{ pag }}{{ post.previous_page_number }}">&laquo;</a></li>
+                    {% else %}
+                        <li class="disabled"><a href="">&laquo;</a></li>
+                    {% endif %}
+                    {% for pag in post.paginator.page_range %}
+                        {% if pag == post.number %}
+                            <li class="active"><a href="/{{ category.categoryslug }}?page={{ pag }}">{{ pag }}</a></li>
+                        {% else %}
+                            <li><a href="/{{ category.categoryslug }}?page={{ pag }}">{{ pag }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if post.has_next %}
+                        <li class="arrow"><a href="/{{ category.categoryslug }}?page={{ pag }}{{ post.next_page_number }}">&raquo;</a></li>
+                    {% else %}
+                        <li class="disabled"><a href="">&raquo;</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+{% else %}
+
+{% endif %}
+
+
+
+</article>
+
+
+
+<!--
+         {% for post in post %}
+
+        <div class="blog-post2" style="    width: 300px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            display: inline-block;margin-right: 10px; height: 242px;
+            vertical-align: top;">
+                <div style="overflow: hidden; height: 178px; margin-bottom: 5px; ">
+        <a href="/post/{{ post.slug }}"><img src="/media/{{ post.image }}" alt="{{ stranica.name_block }}" style="height: 100%; width: 100%"></a>
+        </div>
+        <a href="/post/{{ post.slug }}"><div class="blog-post2-opisanie">{{ post.name_block }}</div></a>
+        <div class="blog-post2-data">{{ post.created_at }}</div>
+        </div>
+
+            {% empty %}
+            <p>Нет постов</p>
+            {% endfor %}
+
+
+        <div class="row">
+                <div class="col-lg-12" align="center">
+                    <ul class="pagination">
+                        {% if post.has_previous %}
+                            <li class="arrow"><a href="/{{ category.categoryslug }}?page={{ pag }}{{ post.previous_page_number }}">&laquo;</a></li>
+                        {% else %}
+                            <li class="disabled"><a href="">&laquo;</a></li>
+                        {% endif %}
+                        {% for pag in post.paginator.page_range %}
+                            {% if pag == post.number %}
+                                <li class="active"><a href="/{{ category.categoryslug }}?page={{ pag }}">{{ pag }}</a></li>
+                            {% else %}
+                                <li><a href="/{{ category.categoryslug }}?page={{ pag }}">{{ pag }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if post.has_next %}
+                            <li class="arrow"><a href="/{{ category.categoryslug }}?page={{ pag }}{{ post.next_page_number }}">&raquo;</a></li>
+                        {% else %}
+                            <li class="disabled"><a href="">&raquo;</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+  -->
+
+
+
+
+
+
+<!--  -->
+
+
+
+
+
+
+
+
+
+
+</main>
+</div>
+
+{% include "menu-right.html" %}
+
+
+
+{% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}400 ошибка{% endblock %}
+{% block keywords %}400 ошибка{% endblock %}
+{% block description %}400 ошибка{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+
+<div class="wrapper-content animated fadeIn">
+<div class="wrapper-only-predmets2">
+<div class="wrapper-only-predmets"> 
+
+	<h1 class="predmets">400 ошибка</h1>
+
+  	<h2 style="margin-left:4.8vw;">Плохой запрос, попробуйте еще раз</h2>
+  	<p style="font-size: .8vw;margin: .5vw 0vw .5vw 4.8vw;">Можете также попробывать обновить страницу</p>
+  	
+
+</div>
+</div>
+</div>
+
+{% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}500 ошибка{% endblock %}
+{% block keywords %}500 ошибка{% endblock %}
+{% block description %}500 ошибка{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+
+<div class="container page-container" style="width: 95%	">
+	<main>
+		<article>
+
+			<h1 style="text-align: center;margin: 0px; ">500 ошибка сервера</h1>
+  			<h2 style="text-align: center;margin-left: 0px !important;">Зайдите на сайт позже.</h2>
+  			<p style="font-size: .8vw;text-align: center;margin: 0px;">Ведутся технические работы</p>
+
+		</article>
+	</main>
+</div>
+
+
+
+{% include "footer.html" %}
+{% endblock %}

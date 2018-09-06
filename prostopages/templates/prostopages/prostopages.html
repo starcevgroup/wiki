@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} {{prostopage.title_us|safe}}{% endblock %}
+{% block keywords %}{{prostopage.description|safe}}{% endblock %}
+{% block description %}{{prostopage.keywords|safe}}{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+<div class="container page-container">
+	<main>
+		<article>
+			<div class="post-header">
+				<h1 class="post-title">{{prostopage.name_block|safe}}</h1>
+			</div>
+			<div class="post-content">
+				<center>
+					{% if prostopage.image %}
+					<img src="/media/{{ prostopage.image }}" alt="{{ prostopage.name_block }}">
+					{% endif %}
+				</center>
+				{{prostopage.text_block|safe}} {{ prostopage.created_at }}
+		
+
+			</div>
+		</article>
+	</main>
+</div>
+
+{% include "menu-right.html" %}
+
+
+
+{% include "footer.html" %}
+{% endblock %}

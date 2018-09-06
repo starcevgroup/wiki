@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} {{flatpage.newflatpage.title_us|safe}}{% endblock %}
+{% block keywords %}{{flatpage.newflatpage.description|safe}}{% endblock %}
+{% block description %}{{flatpage.newflatpage.keywords|safe}}{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+
+
+<div class="container page-container">
+<main>
+
+
+
+
+
+<article>
+
+<div class="post-header">
+	<h1 class="post-title">{{ flatpage.title }}</h1>
+</div>
+
+<div class="post-content">
+<!-- {{ flatpage.content }} -->
+{{flatpage.newflatpage.description|safe}}
+{{flatpage.newflatpage.text_block|safe}}
+</div>
+
+</article>
+
+
+
+
+
+
+
+
+</main>
+</div>
+
+{% include "menu-right.html" %}
+
+
+  
+{% include "footer.html" %}
+{% endblock %}

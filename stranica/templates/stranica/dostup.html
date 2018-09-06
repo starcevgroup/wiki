@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load sitetree %} 
+
+{% block title %}Wiki django{% endblock %}
+{% block keywords %}Wiki django{% endblock %}
+{% block description %}Wiki django{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+
+
+<div class="container page-container">
+
+<main>
+
+
+
+
+
+
+
+
+<article>
+        <div class="post-header">
+            <h1 class="post-title">{{ dostup.name_block|safe }}</h1>
+        </div>
+
+<div class="tabs">
+
+    <ul class="tabs__caption">
+        <li class="active">SSHFS</li>
+        <li>Админка</li>
+        <li>Почта.<span style="color:red">Я</span></li>
+        <li>Почта.<span style="color:#337AC6">G</span></li>
+        <li>SMM</li>
+        <li>База данных</li>
+        <li>Хостинг</li>
+        <li>Домен</li>
+        <li>Другое</li>
+    </ul>
+
+
+{% for dostup in dostup %}
+
+<div class="tabs__content  active">
+       <!--  -->
+
+
+
+
+
+
+
+  {{ dostup.podkluchenie|safe }}
+
+
+
+
+<h3>Перенос сайта</h3>
+<pre><code>scp -P 22 -r beton-pd.local root@77.246.145.48:/var/www/html</code></pre>
+       <!--  -->
+    </div>
+
+    <div class="tabs__content">
+        <!--  -->
+
+{{ dostup.adminka|safe }}
+        <!--  -->
+    </div>
+
+    <div class="tabs__content">
+      <!--  -->
+
+{{ dostup.yandex|safe }}
+        <!--  -->
+    </div>
+
+    <div class="tabs__content">
+      <!--  -->
+
+{{ dostup.google|safe }}
+        <!--  -->
+     </div>
+
+<div class="tabs__content">
+      <!--  -->
+
+{{ dostup.isp|safe }}
+        <!--  -->
+     </div>
+
+
+      <div class="tabs__content">
+      <!--  -->
+
+{{ dostup.phpmyadmin|safe }}
+
+        <!--  -->
+     </div>
+
+      <div class="tabs__content">
+      <!--  -->
+
+{{ dostup.billing|safe }}
+        <!--  -->
+     </div>
+
+      <div class="tabs__content">
+      <!--  -->
+
+{{ dostup.registrator|safe }}
+        <!--  -->
+     </div>
+      <div class="tabs__content">
+      <!--  -->
+
+{{ dostup.drugoe|safe }}
+  <!--  -->
+     </div>
+{% endfor %}
+
+
+<h2>Мониторинг</h2>
+<!-- 
+<table>
+{% for monitoring in vivod %}
+<tr>
+<td>{{monitoring}}</td>
+</tr>
+{% endfor %}
+</table> -->
+<div class="monitoring-wrapper">
+  {{monitoring1|safe}}
+  {{monitoring2|safe}}
+  {{monitoring3|safe}}
+  {{monitoring4|safe}}
+  {{monitoring5|safe}}
+  {{monitoring6|safe}}
+  {{monitoring7|safe}}
+  {{monitoring8|safe}}
+  {{monitoring9|safe}}
+  {{monitoring10|safe}}
+  {{monitoring11|safe}}
+  {{monitoring12|safe}}
+  {{monitoring13|safe}}
+  {{monitoring14|safe}}
+
+</div>
+
+<h2>Договоры</h2>
+<table>
+<tbody>
+<tr>
+<td><a href="/Договоры/создание сайта/юр.лица/договор на создание сайта для юр.лиц.docx">Договор на создание сайта для юр.лиц</a></td>
+<td><a href="/Договоры/продвижение сайта/юр.лица/договор на продвижение сайта для юр.лиц.docx">Договор на продвижение сайта для юр.лиц</a></td>
+</tr>
+<tr>
+<td><a href="/Договоры/создание сайта/физ.лица/договор на создание сайта для физ лица.docx">Договор на создание сайта для физ.лиц</a></td>
+<td>&nbsp;<a href="/Договоры/продвижение сайта/физ.лица/договор на продвижение сайта для физ лица.docx">Договор на продвижение сайта для физ.лиц</a></td>
+</tr>
+</tbody>
+</table>
+      
+
+</div><!-- .tabs -->
+
+
+</article>
+
+
+
+</main>
+
+</div>
+
+
+{% include "menu-right.html" %}
+
+
+{% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}404 ошибка{% endblock %}
+{% block keywords %}404 ошибка{% endblock %}
+{% block description %}404 ошибка{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+
+
+
+<div class="container page-container" style="width: 95%	">
+		<main>
+			<article>
+
+				<h1 style="text-align: center;margin: 0px; ">404 ошибка</h1>
+
+			  	<h2 style="text-align: center;margin-left: 0px !important;">Запрашиваемая страница не найдена</h2>
+			  	<p style="font-size: .8vw;text-align: center;margin: 0px;">Возможно, неправильно указан путь в адресной строке или страница была удалена.</p>
+			  	<p style="font-size: .8vw;text-align: center;margin: 0px;">Возврат на <a href="/">главную страницу</a></p>
+
+			</article>
+		</main>
+	</div>
+
+
+{% include "footer.html" %}
+{% endblock %}
